@@ -1,0 +1,29 @@
+## 2525번
+
+```java
+import java.util.Scanner;
+
+public class Test_2525 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int hour = sc.nextInt();
+		int minute = sc.nextInt();
+		int time = sc.nextInt();
+		
+		hour = hour + (time / 60); 
+		minute = minute + (time % 60);
+		
+		if(minute >= 60) {
+			hour = hour + 1;
+			minute = minute - 60;
+		}
+		if(hour >= 24) {
+			hour = hour - 24;
+		}
+		System.out.println(hour+" "+minute);
+	}
+}
+```
+* 60분이 되면 1시간이 오르는 것과 24시를 0시로 표기하는것에 유의한다.
